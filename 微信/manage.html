@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> 后台控制</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	*{margin: 0;padding: 0}
+	p{
+		line-height: 2em;
+		font-size: 1.5em;background:  rgb(211,211,211);
+		margin-bottom: 0;margin-top: 0;
+	}
+	p>a{
+		width: 5em;text-align: center;
+		display:inline-block;
+		text-decoration: none;
+	}
+	a:hover{
+		color: red;
+		text-decoration: none;
+	}
+	._click{
+		background:#fff;
+		color:#000;
+	}
+	td input:first-child{
+		margin-right: 5%;
+	}
+	.button1,.button2{
+		font-size: 0.9em;
+	}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<p><a href="#In-examine" class="_click">待审查</a><a href="#Had-examine" >已审查</a><a href="#refuse" >已拒绝</a></p>
+	<div class="examine click" id="In-examine">
+		<table class="table table-bordered table-striped">
+			<tbody>
+				<tr>
+					<th width="10%">用户</th>
+					<th width="10%">昵称</th>
+					<th width="60%">内容</th>
+					<th width="10%">发送时间</th>
+					<th width="10%">操作</th>
+				</tr>	
+			</tbody>
+		</table>
+	</div>
+	<div class="examine" id="Had-examine" style="display:none;">
+		<table class="table table-bordered table-striped">
+			<tbody>
+				<tr>
+					<th width="10%">用户</th>
+					<th width="10%">昵称</th>
+					<th width="60%">内容</th>
+					<th width="10%">发送时间</th>
+					<th width="10%">操作</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="examine" id="refuse" style="display:none;">
+		<table class="table table-bordered table-striped">
+			<tbody>
+				<tr>
+					<th width="10%">用户</th>
+					<th width="10%">昵称</th>
+					<th width="60%">内容</th>
+					<th width="10%">发送时间</th>
+					<th width="10%">操作</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<table id="tab11" style="display: none">
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><input type="button" class="button1 btn btn-default " value="上天"  /><input type="button" class="button1 btn btn-default" value="下地"  /></td>
+		</tr>
+	</tbody>
+</table>
+<table id="tab12" style="display: none">
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><input type="button" class="button1 btn btn-default " value="上天"  /></td>
+		</tr>
+	</tbody>
+</table>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('a').bind('click',function(){//teble
+	$('.examine').hide();
+	$('a').removeClass("_click");
+	var flag =$(this).attr('href');
+	$(flag).show();
+	$(this).addClass("_click");
+	})
+</script>
+<script src="js/manage.js"></script>
+</body>
+</html>
